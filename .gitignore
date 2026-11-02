@@ -1,6 +1,7 @@
 # Ambiente e segredos (API Key do AI Studio!)
 .env
 .env.*
+!.env.example
 *.key.json
 
 # Python

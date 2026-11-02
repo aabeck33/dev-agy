@@ -219,3 +219,45 @@ git push -u origin main
 - [ADK Skills](https://adk.dev/skills/) · [Especificação Agent Skills](https://agentskills.io/specification)
 - [ADK EnvironmentToolset](https://adk.dev/integrations/environment-toolset/)
 - [Google AI Studio: API Keys](https://aistudio.google.com/apikey)
+
+
+## O agente-estudos foi construído e validado com sucesso.
+
+  ### O que foi feito e por quê
+
+  1. Estrutura do Projeto:
+      • Criado o arquivo pyproject.toml configurado para gerenciamento com uv e dependência google-adk>=1.29.0.
+      • Empacotada a skill em agente-estudos/app/skills/plano-de-estudos/ mantendo paridade com skills/plano-de-estudos/.
+      • Criado __init__.py e README.md.
+  2. Implementação do Agente (agent.py):
+      • Instruction Provider: função instruction_provider que injeta dinamicamente o dia da semana e a data atual (ex.: "Hoje é segunda-feira, 02/11/2026."), respeitando a divulgação progressiva sem expor recursos   
+      L3 no prompt inicial.
+      • Modelo: lê os.getenv("MODEL", "gemini-3.8-flash").
+      • SkillToolset: carrega a pasta da skill via load_skill_from_dir.
+      • FerramentasDeArquivo: subclasse de EnvironmentToolset que expõe estritamente ReadFile e WriteFile com LocalEnvironment apontando para a pasta persistente agente-estudos/planos/.
+  3. Ambiente, Segredos e Git:
+      • Criados .env.example e .env.
+      • .gitignore configurado para que .env, .venv/ e planos/ nunca apareçam em git status.
+  4. Testes Automatizados:
+      • Criado test_agent.py, validando:
+          • Definição do root_agent e injeção dinâmica de data.
+          • Filtragem de ferramentas (ReadFile e WriteFile apenas; Execute e EditFile bloqueados).
+          • Resolução do diretório planos/.
+          • Descoberta do app app pelo servidor ADK Web (/list-apps).
+
+
+  ──────
+  ### Como Rodar
+
+  1. No arquivo .env, insira sua chave GEMINI_API_KEY:
+    GOOGLE_GENAI_USE_VERTEXAI=FALSE
+    GEMINI_API_KEY=<sua-api-key>
+    MODEL=gemini-3.8-flash
+
+  2. Para rodar a interface web do ADK:
+    cd agente-estudos
+    uv run adk web --allow_origins="*"
+
+  3. Para rodar a bateria de testes automatizados:
+    cd agente-estudos
+    uv run python test_agent.py

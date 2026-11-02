@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "skills": {
+    "google-agents-cli-adk-code": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-adk-code/SKILL.md",
+      "computedHash": "835db1d19b1cea29550b8451148a00b66072e246357cfb255b43a6080f19fa39"
+    },
+    "google-agents-cli-deploy": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-deploy/SKILL.md",
+      "computedHash": "1208c916453ec46d82020df222a24d237053c1fd347d4fd73e4c89aa182e8cfe"
+    },
+    "google-agents-cli-eval": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-eval/SKILL.md",
+      "computedHash": "b7e6f77a314aac36b5b30bcc02f88150be6efbd5a600fdbfa982d1e1fe22ffca"
+    },
+    "google-agents-cli-observability": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-observability/SKILL.md",
+      "computedHash": "913d86f2ce55954155761d26bbc5cbb1d4e9fd2824c2696fe27534151609e3c4"
+    },
+    "google-agents-cli-publish": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-publish/SKILL.md",
+      "computedHash": "9350c8a0077b9087a791b9bf424469f338caa21537aef1b1a22eb86c574e6469"
+    },
+    "google-agents-cli-scaffold": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-scaffold/SKILL.md",
+      "computedHash": "60988afcffc95d5d17cddf7dbf647ab8818aec3b4a95cde107a1c4b25447aa69"
+    },
+    "google-agents-cli-workflow": {
+      "source": "google/agents-cli",
+      "sourceType": "github",
+      "skillPath": "skills/google-agents-cli-workflow/SKILL.md",
+      "computedHash": "2be34165bb6fdeafccc1c51c84a21e0251a81fa660f6d14a4a0ea4ff04e8da5b"
+    }
+  }
+}
